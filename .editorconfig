@@ -1,0 +1,61 @@
+# Consider this the top-most .editorconfig file
+root = true
+
+[*]
+indent_style = space
+
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.yml]
+indent_size = 2
+
+[*.cs]
+indent_size = 4
+charset = utf-8
+
+[*.csproj]
+indent_size = 2
+
+# .NET settings
+[*.cs]
+dotnet_sort_system_directives_first = true
+
+# Use language keywords instead of framework types (eg: Int32 -> int)
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+
+# Style Definitions
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+dotnet_naming_style.camel_case_underscore_prefix.capitalization = camel_case
+dotnet_naming_style.camel_case_underscore_prefix.required_prefix = _
+
+# Private fields should be camel case and prefixed with _
+dotnet_naming_rule.private_fields_should_start_with_underscore_camelcase.symbols = private_fields
+dotnet_naming_rule.private_fields_should_start_with_underscore_camelcase.style = camel_case_underscore_prefix
+dotnet_naming_rule.private_fields_should_start_with_underscore_camelcase.severity = suggestion
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+# Use PascalCase for constant fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols = constant_fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.style  = pascal_case_style
+dotnet_naming_symbols.constant_fields.applicable_kinds = field
+dotnet_naming_symbols.constant_fields.applicable_accessibilities = *
+dotnet_naming_symbols.constant_fields.required_modifiers = const
+
+# Use PascalCase for static readonly fields
+dotnet_naming_rule.static_readonly_fields_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.static_readonly_fields_should_be_pascal_case.symbols = static_readonly_fields
+dotnet_naming_rule.static_readonly_fields_should_be_pascal_case.style  = pascal_case_style
+dotnet_naming_symbols.static_readonly_fields.applicable_kinds = field
+dotnet_naming_symbols.static_readonly_fields.applicable_accessibilities = *
+dotnet_naming_symbols.static_readonly_fields.required_modifiers = static, readonly
+
+# CSharp settings
+[*.cs]
+csharp_prefer_braces = true:warning

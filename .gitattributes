@@ -1,0 +1,13 @@
+# Normalize line endings automatically
+*		text=auto
+
+# Force line endings for scripts
+*.sh		text eol=lf
+*.cmd		text eol=crlf
+
+# Use csharp diff driver
+*.cs		diff=csharp
+
+# Force windows line endings on .NET projects and solution files
+*.sln		text eol=crlf
+*.csproj	text eol=crlf
